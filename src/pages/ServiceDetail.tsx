@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useSearchParams, Link } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { ArrowLeft, MessageSquare, ChevronRight } from 'lucide-react';
 import { servicesData } from '../data/servicesData';
 

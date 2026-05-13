@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Menu, X, Phone, Mail, MessageCircle } from "lucide-react";
+import { Menu, X, Phone, Mail } from "lucide-react";
 import { useSearchParams } from "react-router-dom";
 
 const Navbar: React.FC = () => {
