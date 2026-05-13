@@ -8,9 +8,9 @@ export default {
     extend: {
       colors: {
         brand: {
-          gray: '#6B7280', // Steel Gray
-          red: '#000000',  // Now Black (Replaces Rojo Bosch)
-          dark: '#1F2937', // Deep Contrast Background
+          gray: '#9CA3AF', // Lighter Steel Gray
+          red: '#E2001A',  // Bosch Red
+          dark: '#0f1115', // Premium Grayish Dark Background
           white: '#FFFFFF'
         }
       },

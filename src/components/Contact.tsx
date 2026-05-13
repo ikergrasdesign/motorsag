@@ -15,7 +15,7 @@ const Contact: React.FC = () => {
               <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-gradient">
                 ¿Hablamos de tu <span className="text-gray-400">Próxima Visita?</span>
               </h2>
-              <p className="text-gray-400 max-w-md">
+              <p className="text-gray-200 max-w-md">
                 Reserva tu cita o haznos cualquier consulta. Nuestro equipo técnico te atenderá con la máxima profesionalidad.
               </p>
             </div>
@@ -70,8 +70,8 @@ const Contact: React.FC = () => {
               <form className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-xs font-bold uppercase tracking-widest text-gray-500">Nombre</label>
-                    <input type="text" className="w-full bg-brand-dark border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-red transition-colors" placeholder="Tu nombre" />
+                    <label className="text-xs font-bold uppercase tracking-widest text-gray-300">Nombre</label>
+                    <input type="text" className="w-full bg-brand-dark border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-red transition-colors placeholder:text-gray-500" placeholder="Tu nombre" />
                   </div>
                   <div className="space-y-2">
                     <label className="text-xs font-bold uppercase tracking-widest text-gray-500">Email</label>
@@ -91,8 +91,8 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest text-gray-500">Mensaje</label>
-                  <textarea rows={4} className="w-full bg-brand-dark border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-red transition-colors" placeholder="¿En qué podemos ayudarte?"></textarea>
+                  <label className="text-xs font-bold uppercase tracking-widest text-gray-300">Mensaje</label>
+                  <textarea rows={4} className="w-full bg-brand-dark border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-red transition-colors placeholder:text-gray-500" placeholder="¿En qué podemos ayudarte?"></textarea>
                 </div>
 
                 <button className="w-full bg-brand-red border border-white/20 hover:bg-white hover:text-black font-bold py-4 rounded-xl flex items-center justify-center gap-3 transition-all">

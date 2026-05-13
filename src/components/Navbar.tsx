@@ -55,13 +55,13 @@ const Navbar: React.FC = () => {
               <span>+34 931 88 45 70</span>
             </a>
             <a href="mailto:info@motorsag.es" className="hidden sm:flex items-center gap-2 hover:text-white transition-colors">
-              <Mail size={12} className="text-gray-400" />
+              <Mail size={12} className="text-gray-300" />
               <span>info@motorsag.es</span>
             </a>
           </div>
           <div className="flex items-center gap-4 font-bold">
             <span className="text-white cursor-pointer">ES</span>
-            <span className="text-gray-500 hover:text-white cursor-pointer transition-colors">CA</span>
+            <span className="text-gray-300 hover:text-white cursor-pointer transition-colors">CA</span>
           </div>
         </div>
 
@@ -70,14 +70,9 @@ const Navbar: React.FC = () => {
           {/* Logo */}
           <button 
             onClick={() => handleNavClick('/#inicio')}
-            className="flex flex-col items-start group"
+            className="flex items-center group"
           >
-            <span className="text-3xl md:text-4xl font-black tracking-tighter text-white leading-tight">
-              MOTOR<span className="text-white font-light">SAG</span>
-            </span>
-            <span className={`text-[9px] tracking-[0.5em] -mt-1 font-bold uppercase transition-colors duration-500 ${scrolled ? 'text-gray-500' : 'text-gray-400'}`}>
-              Mechanic Service
-            </span>
+            <img src="/Logo.svg" alt="Motorsag Logo" className="h-10 md:h-12 w-auto" />
           </button>
 
           {/* Desktop Menu */}
@@ -108,9 +103,7 @@ const Navbar: React.FC = () => {
       {/* Full-Screen Mobile Menu Overlay */}
       <div className={`fixed inset-0 z-[200] bg-black transition-all duration-500 ease-in-out md:hidden ${isOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}`}>
         <div className="flex justify-between items-center p-8 border-b border-white/5">
-           <span className="text-3xl font-black tracking-tighter text-white">
-              MOTOR<span className="text-white font-light">SAG</span>
-            </span>
+           <img src="/Logo.svg" alt="Motorsag Logo" className="h-10 w-auto" />
             <button onClick={() => setIsOpen(false)} className="text-white">
               <X size={40} strokeWidth={1} />
             </button>

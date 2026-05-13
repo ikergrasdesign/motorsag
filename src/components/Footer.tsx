@@ -6,9 +6,7 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
           <div className="flex items-center gap-2">
-            <span className="text-2xl font-black tracking-tighter text-white">
-              MOTOR<span className="text-white font-normal">SAG</span>
-            </span>
+            <img src="/Logo.svg" alt="Motorsag Logo" className="h-8 w-auto" />
           </div>
 
           <div className="text-sm text-gray-500">

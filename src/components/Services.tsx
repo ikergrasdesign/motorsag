@@ -55,10 +55,10 @@ const Services: React.FC = () => {
             Especialidades
           </h3>
           <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight text-gradient">
-            Servicios de <span className="text-gray-400">Alto Rendimiento</span>
+            Servicios de <span className="text-gray-200">Alto Rendimiento</span>
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Soluciones integrales para tu vehículo con la garantía y precisión que solo Motorsag puede ofrecer.
+          <p className="text-gray-200 max-w-2xl mx-auto">
+            Soluciones integrales para tu vehículo con la garantía y precisión de un servicio oficial Bosch.
           </p>
         </div>
 
@@ -80,7 +80,7 @@ const Services: React.FC = () => {
                   <h4 className="text-xl font-bold text-white group-hover:text-brand-red transition-colors">
                     {service.title}
                   </h4>
-                  <p className="text-gray-400 leading-relaxed text-sm">
+                  <p className="text-gray-200 leading-relaxed text-sm">
                     {service.description}
                   </p>
                 </div>

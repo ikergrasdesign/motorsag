@@ -13,22 +13,22 @@ const About: React.FC = () => {
               </h3>
               <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-gradient">
                 Motorsag: Pasión por la <br /> 
-                <span className="text-gray-400">Excelencia Automotriz</span>
+                <span className="text-gray-200">Excelencia Automotriz</span>
               </h2>
             </div>
             
-            <p className="text-lg text-gray-300 leading-relaxed max-w-xl">
-              En Motorsag, no solo reparamos vehículos; aplicamos la tecnología más avanzada y los estándares de calidad de <strong>Bosch Car Service</strong> para garantizar que tu coche rinda como el primer día.
+            <p className="text-lg text-gray-100 leading-relaxed max-w-xl">
+              Somos especialistas en diagnosis avanzada y reprogramaciones. Con más de 15 años de experiencia, combinamos la pasión por la mecánica con la precisión de la tecnología Bosch para garantizar que tu coche rinda como el primer día.
             </p>
 
             <div className="grid grid-cols-2 gap-8 pt-4">
               <div className="space-y-2">
                 <p className="text-3xl font-bold text-white">15+</p>
-                <p className="text-sm text-gray-400 uppercase tracking-wider">Años de Experiencia</p>
+                <p className="text-sm text-gray-200 uppercase tracking-wider">Años de Experiencia</p>
               </div>
-              <div className="space-y-2">
-                <p className="text-3xl font-bold text-white">100%</p>
-                <p className="text-sm text-gray-400 uppercase tracking-wider">Garantía Bosch</p>
+              <div className="space-y-1">
+                <p className="text-4xl font-black text-brand-red">100%</p>
+                <p className="text-sm text-gray-200 uppercase tracking-wider">Garantía Bosch</p>
               </div>
             </div>
 
