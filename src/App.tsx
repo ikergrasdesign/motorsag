@@ -24,6 +24,8 @@ function ScrollToTop() {
 }
 
 function AppContent() {
+  const location = useLocation();
+
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1
@@ -37,34 +39,21 @@ function AppContent() {
       });
     }, observerOptions);
 
-    const revealElements = document.querySelectorAll('.reveal');
-    revealElements.forEach(el => observer.observe(el));
-
-    // Custom Cursor Logic
-    const cursorMain = document.getElementById('cursor-main');
-    const cursorDot = document.getElementById('cursor-dot');
-
-    const moveCursor = (e: MouseEvent) => {
-      if (cursorMain && cursorDot) {
-        cursorMain.style.transform = `translate3d(${e.clientX - 4}px, ${e.clientY - 4}px, 0)`;
-        cursorDot.style.transform = `translate3d(${e.clientX - 16}px, ${e.clientY - 16}px, 0)`;
-      }
-    };
-
-    window.addEventListener('mousemove', moveCursor);
+    // Use a small timeout to ensure components have finished rendering
+    const timer = setTimeout(() => {
+      const revealElements = document.querySelectorAll('.reveal');
+      revealElements.forEach(el => observer.observe(el));
+    }, 100);
 
     return () => {
       observer.disconnect();
-      window.removeEventListener('mousemove', moveCursor);
+      clearTimeout(timer);
     };
-  }, []);
+  }, [location.pathname, location.search]); // Re-run when route or search params change
 
   return (
-    <main className="min-h-screen bg-brand-dark bg-grain relative cursor-none">
+    <main className="min-h-screen bg-brand-dark relative">
       <ScrollToTop />
-      {/* Custom Cursor */}
-      <div className="hidden lg:block fixed top-0 left-0 w-8 h-8 border border-brand-red rounded-full pointer-events-none z-[9999] transition-transform duration-100 ease-out mix-blend-difference" id="cursor-dot" />
-      <div className="hidden lg:block fixed top-0 left-0 w-2 h-2 bg-brand-red rounded-full pointer-events-none z-[9999] transition-transform duration-75 ease-out" id="cursor-main" />
 
       <Navbar />
       <Routes>

@@ -1,18 +1,15 @@
 import React, { useEffect } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
-import { ArrowLeft, MessageSquare } from 'lucide-react';
+import { useSearchParams, Link } from 'react-router-dom';
+import { ArrowLeft, MessageSquare, ChevronRight } from 'lucide-react';
 import { servicesData } from '../data/servicesData';
-import Footer from '../components/Footer';
 
 const ServiceDetail: React.FC = () => {
-  const { serviceId } = useParams<{ serviceId: string }>();
-  const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const serviceId = searchParams.get('service');
   const service = servicesData.find(s => s.id === serviceId);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-    
-    // Trigger reveals
+    // Trigger reveals for the newly loaded content
     const observerOptions = { threshold: 0.1 };
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -26,19 +23,25 @@ const ServiceDetail: React.FC = () => {
     return () => observer.disconnect();
   }, [serviceId]);
 
-  if (!service) {
-    return (
-      <div className="h-screen flex items-center justify-center bg-brand-dark text-white">
-        <div className="text-center space-y-4">
-          <h1 className="text-4xl font-bold">Servicio no encontrado</h1>
-          <Link to="/" className="text-brand-red hover:underline">Volver al inicio</Link>
-        </div>
-      </div>
-    );
-  }
+  if (!service) return null;
+
+  const otherServices = servicesData.filter(s => s.id !== serviceId);
+
+  const handleServiceClick = (id: string) => {
+    setSearchParams({ service: id });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleBackToServices = () => {
+    setSearchParams({});
+    const servicesSection = document.getElementById('servicios');
+    if (servicesSection) {
+      servicesSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
-    <div className="min-h-screen bg-brand-dark text-white selection:bg-brand-red/30">
+    <div className="bg-brand-dark text-white selection:bg-brand-red/30">
       {/* Header / Hero for Service */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
@@ -47,13 +50,13 @@ const ServiceDetail: React.FC = () => {
         </div>
 
         <div className="max-w-7xl mx-auto px-8 relative z-10">
-          <Link 
-            to="/#servicios" 
+          <button 
+            onClick={handleBackToServices}
             className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-12 group"
           >
             <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
             Volver a servicios
-          </Link>
+          </button>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-end">
             <div className="space-y-6 reveal">
@@ -70,11 +73,11 @@ const ServiceDetail: React.FC = () => {
             
             <div className="lg:text-right reveal animation-delay-200">
                <a 
-                href="/#contacto"
-                className="inline-flex items-center gap-3 px-8 py-4 bg-brand-red border border-white/20 hover:bg-white hover:text-black text-white font-bold rounded-full transition-all hover:scale-105 shadow-xl"
+                href="#contacto"
+                className="inline-flex items-center gap-3 px-10 py-4 bg-brand-red border border-white/20 hover:bg-white hover:text-black text-white font-bold rounded-full transition-all hover:scale-105 shadow-2xl uppercase tracking-widest text-xs"
               >
-                <MessageSquare size={20} />
-                Solicitar Cita Ahora
+                <MessageSquare size={18} />
+                Solicitar Presupuesto
               </a>
             </div>
           </div>
@@ -116,20 +119,30 @@ const ServiceDetail: React.FC = () => {
         </div>
       </section>
 
-      {/* CTA Bottom */}
-      <section className="py-24 text-center space-y-8 reveal">
-        <h3 className="text-4xl font-bold text-gradient">¿Listo para mejorar tu vehículo?</h3>
-        <p className="text-gray-400 max-w-md mx-auto">
-          Contacta con nosotros y te daremos el mejor asesoramiento técnico.
-        </p>
-        <div className="flex justify-center gap-6 pt-4">
-          <Link to="/#contacto" className="px-8 py-4 bg-white text-brand-dark font-bold rounded-full hover:bg-brand-red hover:text-white transition-all">
-            Contactar con Motorsag
-          </Link>
+      {/* Other Services Section */}
+      <section className="py-24 bg-brand-dark overflow-hidden relative">
+        <div className="max-w-7xl mx-auto px-8">
+          <h3 className="text-3xl font-bold text-white mb-12 reveal">Otros servicios</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {otherServices.map((s) => (
+              <button
+                key={s.id}
+                onClick={() => handleServiceClick(s.id)}
+                className="group p-6 bg-slate-900 rounded-2xl border border-white/5 hover:border-brand-red/50 transition-all text-left reveal"
+              >
+                <div className="text-brand-red mb-4 group-hover:scale-110 transition-transform">
+                  {s.icon}
+                </div>
+                <h4 className="text-lg font-bold text-white mb-2">{s.title}</h4>
+                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gray-400 group-hover:text-white transition-colors">
+                  Ver más <ChevronRight size={14} className="text-brand-red" />
+                </div>
+              </button>
+            ))}
+          </div>
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 };

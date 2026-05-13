@@ -1,9 +1,12 @@
-import React from 'react';
-import { Calendar, Wrench } from 'lucide-react';
+import React from "react";
+import { Calendar, Wrench } from "lucide-react";
 
 const Hero: React.FC = () => {
   return (
-    <section id="inicio" className="relative h-screen w-full overflow-hidden bg-slate-950">
+    <section
+      id="inicio"
+      className="relative h-screen w-full overflow-hidden bg-slate-950"
+    >
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <video
@@ -14,16 +17,16 @@ const Hero: React.FC = () => {
           poster="/hero-bg.png"
           className="h-full w-full object-cover"
         >
-          <source 
-            src="https://videos.pexels.com/video-files/4489749/4489749-uhd_2560_1440_25fps.mp4" 
-            type="video/mp4" 
+          <source
+            src="https://videos.pexels.com/video-files/4489749/4489749-uhd_2560_1440_25fps.mp4"
+            type="video/mp4"
           />
           Your browser does not support the video tag.
         </video>
         {/* Fallback Image if video fails or is loading */}
-        <div 
-          className="absolute inset-0 z-[-1] bg-cover bg-center" 
-          style={{ backgroundImage: 'url(/hero-bg.png)' }}
+        <div
+          className="absolute inset-0 z-[-1] bg-cover bg-center"
+          style={{ backgroundImage: "url(/hero-bg.png)" }}
         />
         {/* Subtle Dark Overlay */}
         <div className="absolute inset-0 bg-black/50" />
@@ -49,7 +52,8 @@ const Hero: React.FC = () => {
 
           {/* Subtitle */}
           <p className="mx-auto mb-10 max-w-2xl text-lg text-gray-200 md:text-xl animation-delay-200">
-            Cuidamos de tu vehículo con la tecnología más avanzada y la garantía líder de Bosch.
+            Cuidamos de tu vehículo con la tecnología más avanzada y la garantía
+            líder de Bosch.
           </p>
 
           {/* CTA Buttons */}

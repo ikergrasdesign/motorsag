@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { Cpu, Settings, Zap, Car, Wind, ChevronRight } from 'lucide-react';
 
 const services = [
@@ -40,6 +40,13 @@ const services = [
 ];
 
 const Services: React.FC = () => {
+  const [, setSearchParams] = useSearchParams();
+
+  const handleServiceClick = (id: string) => {
+    setSearchParams({ service: id });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <section id="servicios" className="py-24 bg-brand-dark overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-8">
@@ -79,12 +86,12 @@ const Services: React.FC = () => {
                 </div>
 
                 <div className="pt-4">
-                  <Link 
-                    to={`/servicios/${service.id}`} 
+                  <button 
+                    onClick={() => handleServiceClick(service.id)}
                     className="flex items-center gap-2 text-white text-xs font-bold uppercase tracking-wider group-hover:gap-4 transition-all"
                   >
                     Saber más <ChevronRight size={14} className="text-brand-red" />
-                  </Link>
+                  </button>
                 </div>
               </div>
             </div>
