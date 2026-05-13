@@ -41,7 +41,7 @@ const ServiceDetail: React.FC = () => {
   };
 
   return (
-    <div className="bg-brand-dark text-white selection:bg-brand-red/30">
+    <div className="bg-brand-dark text-white selection:bg-brand-red/30 overflow-x-hidden">
       {/* Header / Hero for Service */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
@@ -63,7 +63,7 @@ const ServiceDetail: React.FC = () => {
               <div className="w-20 h-20 rounded-3xl bg-slate-900 flex items-center justify-center text-white border border-white/5">
                 {service.icon}
               </div>
-              <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter text-gradient leading-tight">
+              <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-gradient leading-tight break-words py-2">
                 {service.title}
               </h1>
               <p className="text-xl text-brand-gray max-w-xl leading-relaxed">
@@ -99,7 +99,7 @@ const ServiceDetail: React.FC = () => {
                 <div key={idx} className="space-y-6 reveal group">
                   <div className="flex items-center gap-4">
                     <div className="h-px flex-1 bg-gradient-to-r from-white/20 to-transparent opacity-30" />
-                    <h3 className="text-xl font-bold text-white uppercase tracking-widest shrink-0">
+                    <h3 className="text-lg md:text-xl font-bold text-white uppercase tracking-widest text-center px-2">
                       {section.title}
                     </h3>
                     <div className="h-px flex-1 bg-gradient-to-l from-white/20 to-transparent opacity-30" />

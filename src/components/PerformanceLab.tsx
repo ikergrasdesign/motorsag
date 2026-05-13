@@ -70,7 +70,7 @@ const PerformanceLab: React.FC = () => {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-red/10 border border-brand-red/20 text-brand-red text-[10px] font-bold tracking-[0.2em] uppercase">
             <Zap size={12} /> Motorsag Engineering
           </div>
-          <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-white uppercase italic">
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-white uppercase italic break-words">
             Performance <span className="text-brand-red">Lab</span>
           </h2>
           <p className="text-gray-300 max-w-2xl mx-auto text-lg">
@@ -123,7 +123,7 @@ const PerformanceLab: React.FC = () => {
 
           {/* Visualization - Improved Contrast & Colors */}
           <div className="reveal animation-delay-200">
-            <div className="bg-slate-900 border border-white/10 rounded-[3rem] p-8 md:p-12 relative shadow-2xl">
+            <div className="bg-slate-900 border border-white/10 rounded-3xl md:rounded-[3rem] p-6 md:p-12 relative shadow-2xl overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-brand-red/5 to-transparent pointer-events-none" />
               {/* Animated scanline */}
               <div className="absolute top-0 left-0 w-full h-1 bg-brand-red/20 animate-scanline z-0" />
@@ -137,7 +137,7 @@ const PerformanceLab: React.FC = () => {
                         <Gauge size={16} />
                         <span className="text-[10px] font-black uppercase tracking-widest">Potencia Máxima</span>
                       </div>
-                      <h3 className="text-4xl font-black text-white">Potencia (CV)</h3>
+                      <h3 className="text-2xl md:text-4xl font-black text-white">Potencia (CV)</h3>
                     </div>
                     <div className="text-right">
                       <span className="text-[10px] font-bold text-gray-300 uppercase">Incremento</span>
@@ -186,7 +186,7 @@ const PerformanceLab: React.FC = () => {
                         <Activity size={16} />
                         <span className="text-[10px] font-black uppercase tracking-widest">Par Motor</span>
                       </div>
-                      <h3 className="text-4xl font-black text-white">Par (Nm)</h3>
+                      <h3 className="text-2xl md:text-4xl font-black text-white">Par (Nm)</h3>
                     </div>
                     <div className="text-right">
                       <span className="text-[10px] font-bold text-gray-300 uppercase">Incremento</span>
@@ -249,13 +249,15 @@ const PerformanceLab: React.FC = () => {
               </div>
 
               {/* Action */}
-              <div className="mt-12">
+              <div className="mt-8 md:mt-12">
                 <a 
                   href="#contacto" 
-                  className="w-full flex items-center justify-center gap-4 py-6 bg-white text-black font-black uppercase tracking-[0.2em] text-sm hover:bg-brand-red hover:text-white transition-all group"
+                  className="w-full flex items-center justify-center gap-3 py-5 px-6 bg-brand-red text-white font-black uppercase tracking-widest text-[10px] sm:text-xs md:text-sm rounded-2xl hover:bg-white hover:text-brand-red transition-all duration-300 group shadow-[0_10px_40px_rgba(226,0,26,0.3)]"
                 >
-                  <Cpu size={20} className="group-hover:rotate-12 transition-transform" />
-                  Reservar Reprogramación para {selectedModel.name}
+                  <Cpu size={20} className="group-hover:rotate-12 transition-transform shrink-0" />
+                  <span className="text-center">
+                    Reservar Reprogramación para {selectedModel.name}
+                  </span>
                 </a>
               </div>
             </div>

@@ -42,10 +42,10 @@ const Hero: React.FC = () => {
 
           {/* Heading with Overlapping Effect */}
           <div className="relative mb-6">
-            <h1 className="text-6xl font-extrabold tracking-tighter text-gray-300/50 leading-none md:text-8xl lg:text-9xl">
+            <h1 className="text-5xl font-extrabold tracking-tighter text-gray-300/50 leading-none md:text-8xl lg:text-9xl">
               Precisión.
             </h1>
-            <h2 className="relative -mt-5 text-6xl font-extrabold tracking-tighter text-white leading-none md:-mt-8 md:text-8xl lg:text-9xl text-gradient">
+            <h2 className="relative -mt-5 text-5xl font-extrabold tracking-tighter text-white leading-none md:-mt-8 md:text-8xl lg:text-9xl text-gradient">
               Confianza.
             </h2>
           </div>

@@ -11,9 +11,9 @@ const About: React.FC = () => {
               <h3 className="text-brand-gray font-semibold tracking-widest uppercase text-sm">
                 Nuestra Identidad
               </h3>
-              <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-gradient">
-                Motorsag: Pasión por la <br /> 
-                <span className="text-gray-200">Excelencia Automotriz</span>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-gradient">
+                Motorsag: Pasión por la 
+                <span className="text-gray-200"> Excelencia Automotriz</span>
               </h2>
             </div>
             

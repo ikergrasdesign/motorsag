@@ -48,16 +48,16 @@ const Services: React.FC = () => {
   };
 
   return (
-    <section id="servicios" className="py-24 bg-brand-dark overflow-hidden relative">
-      <div className="max-w-7xl mx-auto px-8">
-        <div className="text-center mb-16 space-y-4 reveal">
+    <section id="servicios" className="py-16 md:py-24 bg-brand-dark overflow-hidden relative">
+      <div className="max-w-7xl mx-auto px-6 md:px-8">
+        <div className="text-center mb-12 md:mb-16 space-y-4 reveal">
           <h3 className="text-brand-gray font-semibold tracking-widest uppercase text-sm">
             Especialidades
           </h3>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight text-gradient">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight text-gradient">
             Servicios de <span className="text-gray-200">Alto Rendimiento</span>
           </h2>
-          <p className="text-gray-200 max-w-2xl mx-auto">
+          <p className="text-gray-200 max-w-2xl mx-auto text-sm md:text-base">
             Soluciones integrales para tu vehículo con la garantía y precisión de un servicio oficial Bosch.
           </p>
         </div>
@@ -100,8 +100,8 @@ const Services: React.FC = () => {
           {/* Contact CTA Card */}
           <div className="group relative bg-black border border-white/10 p-8 rounded-3xl overflow-hidden flex flex-col justify-between">
             <div className="space-y-4 relative z-10">
-              <h4 className="text-2xl font-bold text-white leading-tight">
-                ¿Necesitas un presupuesto <br /> personalizado?
+              <h4 className="text-xl md:text-2xl font-bold text-white leading-tight">
+                ¿Necesitas un presupuesto personalizado?
               </h4>
               <p className="text-white/60 text-sm">
                 Cuéntanos qué necesita tu coche y te daremos una solución a medida.

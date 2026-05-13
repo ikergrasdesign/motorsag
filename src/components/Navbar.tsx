@@ -108,12 +108,12 @@ const Navbar: React.FC = () => {
               <X size={40} strokeWidth={1} />
             </button>
         </div>
-        <div className="flex flex-col items-center justify-center h-full space-y-12 px-8">
+        <div className="flex flex-col items-center justify-start pt-24 space-y-8 px-8">
           {navLinks.map((link, i) => (
             <button
               key={link.name}
               onClick={() => handleNavClick(link.href)}
-              className={`text-4xl font-black text-white tracking-tighter uppercase transition-all duration-500 ${isOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+              className={`text-2xl font-black text-white tracking-widest uppercase transition-all duration-500 ${isOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
               style={{ transitionDelay: `${i * 100}ms` }}
             >
               {link.name}
